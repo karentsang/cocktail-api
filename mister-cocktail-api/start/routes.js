@@ -19,3 +19,9 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+
+Route.get('/cocktails', 'CocktailController.index')
+Route.get('/cocktails/:id', 'CocktailController.show')
+Route.post('/cocktails/create', 'CocktailController.create')
+Route.post('cocktails/:id/doses', 'DoseController.create')
+Route.delete('/cocktails/:id/doses/:did', 'DoseController.destroy')
